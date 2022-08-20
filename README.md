@@ -6,7 +6,8 @@ A Stories project using
     Fake REST API  for login and register
 
 
-Implemented End-points: login,register
+
+
 
 ## Install
 
