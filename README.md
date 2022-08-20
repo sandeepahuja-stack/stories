@@ -35,7 +35,11 @@ with the following data
   "password":"nilson"
 
 ```
+## HOMEPAGE
+<img width="477" alt="Screenshot 2022-08-21 at 12 24 28 AM" src="https://user-images.githubusercontent.com/62178420/185762234-7aec9f7f-1e09-412a-8108-8723abc69efc.png">
+
+## When user click on article
 <img width="480" alt="Screenshot 2022-08-21 at 12 24 43 AM" src="https://user-images.githubusercontent.com/62178420/185762232-444197b0-c2ec-4dbe-bb38-af2ea3271e24.png">
-<img width="504" alt="Screenshot 2022-08-21 at 12 24 48 AM" src="https://user-images.githubusercontent.com/62178420/185762224-7b4a3f75-37e4-4e8e-97de-028d8bb558cc.png"><img width="477" alt="Screenshot 2022-08-21 at 12 24 28 AM" src="https://user-images.githubusercontent.com/62178420/185762234-7aec9f7f-1e09-412a-8108-8723abc69efc.png">
+<img width="504" alt="Screenshot 2022-08-21 at 12 24 48 AM" src="https://user-images.githubusercontent.com/62178420/185762224-7b4a3f75-37e4-4e8e-97de-028d8bb558cc.png">
 
 
