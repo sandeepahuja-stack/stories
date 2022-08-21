@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { registerUserAsync } from "../../../redux/reducers/user/user.thunk";
 
 const USER_REGEX = /^[A-z]{3,23}$/;
-const PWD_REGEX = /^[A-z]{8,23}$/;
+const PWD_REGEX = /^[-@.\/#&+\w\s]{8,23}$/;
 
 const RegisterForm = () => {
   
@@ -42,7 +42,6 @@ const RegisterForm = () => {
 
     return (
         <>
-        {/* {isLoading &&<> loading</>} */}
         
             <section>
                 <h1>Register</h1>
@@ -57,11 +56,13 @@ const RegisterForm = () => {
                         onChange={(e) => setUser(e.target.value)}
                         value={user}
                         required
+                        
+                        error={!validName && user.length > 0}
                         aria-invalid={validName ? "false" : "true"}
                         aria-describedby="uidnote"
                         label="User"
-                        helperText={<Typography  variant="body2">
-                         4 to 24 characters.</Typography>}
+                        helperText={<Typography component="span" color={!validName && user.length > 0 ? 'error' : 'inherit'}>4 to 24 characters.</Typography>}
+                        
                         />
                     </Box>
                   
@@ -75,11 +76,12 @@ const RegisterForm = () => {
                         value={pwd}
                         required
                         placeholder="Password"
+                        error={!validPwd && pwd.length > 0}
                         aria-invalid={validPwd ? "false" : "true"}
                         aria-describedby="pwdnote"
                         label="Password"
-                        helperText={<Typography  variant="body2">
-                        8 to 24 characters.</Typography>}
+                        
+                        helperText={<Typography component="span" color={!validPwd && pwd.length > 0 ? 'error' : 'inherit'}>8 to 24 alphanumeric & special characters.</Typography>}
                         />
                     </Box>
                    
@@ -91,17 +93,18 @@ const RegisterForm = () => {
                         id="confirm_pwd"
                         onChange={(e) => setMatchPwd(e.target.value)}
                         value={matchPwd}
+                        error={!validMatch &&  matchPwd.length > 0}
                         placeholder="Confirm Password"
                         required
                         aria-invalid={validMatch ? "false" : "true"}
                         aria-describedby="confirmnote"
                         label="Confirm Password"
-                        helperText={<Typography  variant="body2">
-                        Must match the first password input field.</Typography>}
+                        helperText={<Typography component="span" color={!validMatch && matchPwd.length > 0 ? 'error' : 'inherit'}>Must match the first password input field.</Typography>}
+                        
                         />
                     </Box>
                     
-<Button type="submit" variant="contained" color="secondary" disabled={!validName || !validPwd || !validMatch ? true : false}>Sign Up</Button>
+                    <Button type="submit" variant="contained" color="secondary" disabled={!validName || !validPwd || !validMatch ? true : false}>Sign Up</Button>
                 </form>
               
             </section>

@@ -2,10 +2,12 @@ import { Box, Button, TextField } from '@mui/material';
 import {  useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { loginUserAsync } from '../../../redux/reducers/user/user.thunk';
-
+import { useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
-
+    let navigate = useNavigate();
+    // Somewhere in your code, e.g. inside a handler:
+    
     const [user, setUser] = useState('');
     const [pwd, setPwd] = useState('');
     
@@ -15,9 +17,7 @@ const LoginForm = () => {
         e.preventDefault();
 
         dispatch(loginUserAsync({ email: user, password: pwd }));
-            
-        setUser('');
-        setPwd('');
+        navigate("/"); 
       
     }
 
@@ -29,7 +29,8 @@ const LoginForm = () => {
                 <TextField name="email" margin="dense" type="text" placeholder="User Name"  label="User"  required id="username"
                     autoComplete="off"
                     onChange={(e) => setUser(e.target.value)}
-                    value={user}/>
+                    value={user}
+                    />
                     </Box>
                 
                  <Box mb="10px">

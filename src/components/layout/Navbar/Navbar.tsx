@@ -1,6 +1,7 @@
 import { AppBar, Box, Button, Toolbar, Typography } from "@mui/material";
-import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { logoutUser } from "../../../redux/actions/user.actions";
 import IStore from "../../../redux/interfaces/IStore";
 import Search from "../Search";
 const Navbar = () => {
@@ -10,7 +11,8 @@ const Navbar = () => {
   }
   const {user} = useSelector((state: IStore) => state);
   const {user: userName} = user;
-
+  const dispatch = useDispatch();
+  let navigate = useNavigate();
     return <AppBar position="static" variant="elevation">
         <Toolbar sx={{
           justifyContent:"space-between"
@@ -23,7 +25,11 @@ const Navbar = () => {
           <Box display="flex" justifyContent="end" >
             <Search />
             {userName === '' && <Button color="inherit" variant="text" ><Link to="/login" style={style}>Login</Link></Button>}
-            {userName  && <Button color="inherit" variant="text" >Logout</Button>}
+            {userName  && <Button color="inherit" variant="text" onClick={()=>{
+              dispatch(logoutUser());
+              navigate('/login')
+              
+            }} >Logout</Button>}
 
           </Box>
             

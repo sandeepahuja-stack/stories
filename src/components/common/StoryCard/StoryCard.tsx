@@ -40,7 +40,11 @@ export default function StoryCard(props: IStoryCard) {
         alt={multimedia[0]?.caption}
       />}
  
-      <CardContent onClick={onClick && clickHandler}>
+      <CardContent onClick={onClick && clickHandler} sx={{
+        ...(onClick && {
+          cursor: 'pointer'
+        })
+      }}>
         {(section || subsection ) && <Box mb={1} textTransform="uppercase" fontWeight="lighter" textAlign="right">{section && <Chip label={section} size="small" />} {subsection && <Chip label={subsection} size="small" /> }</Box>}
     
         <Typography gutterBottom variant="h6" component="h6" title={title} height={!inModal ? "70px" : 'auto'}>

@@ -26,7 +26,8 @@ const SearchModal = ({open, handleClose}: {
       setValue(e.target.value);
     }
     const debouncedSearchTerm = useDebounce(value,500);
-    const prevSearchItems = JSON.parse(CookiesHelper.readCookie('searchItems') ||'').split(',');
+    const prevSearchItems = JSON.parse(CookiesHelper.readCookie('searchItems') ||'[]');
+
     const [previousSearches, updateSearches]= useState(prevSearchItems);
      // Effect for API call
     useEffect(
@@ -47,8 +48,7 @@ const SearchModal = ({open, handleClose}: {
     );
     useEffect(()=>{
 
-      console.log(previousSearches);
-      return () => CookiesHelper.createCookie('searchItems', JSON.stringify(previousSearches.join(',')), 15);
+      return () => CookiesHelper.createCookie('searchItems', JSON.stringify(previousSearches), 15);
       
     },[previousSearches])
     const [index , updateIndex] = useState(1);

@@ -1,7 +1,7 @@
 import LoginService from "../../../services/user/register/login.service";
 import RegisterService from "../../../services/user/register/register.service";
 import CookiesHelper from "../../../utils/helper/cookiesHelper.helper";
-import {registerLoadError, registerLoadStart, registerLoadSuccess, loginLoadError, loginLoadStart, loginLoadSuccess, logoutUser} from '../../actions/user.actions';
+import {registerLoadError, registerLoadStart, registerLoadSuccess, loginLoadError, loginLoadStart, loginLoadSuccess} from '../../actions/user.actions';
 import { IRegisterUserParam } from "../../interfaces/IUser";
 
 

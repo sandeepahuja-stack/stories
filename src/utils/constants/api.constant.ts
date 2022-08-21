@@ -8,10 +8,11 @@ export const NY_SEARCH_URL = `${NY_BASE_API_URL}search/v2/articlesearch.json`;
 export const IMG_BASE_URL = 'https://static01.nyt.com/';
 
 
-export const USER_BASE_API_URL = 'http://localhost:8001/auth/';
+export const USER_BASE_API_URL = 'http://localhost:8001';
 
-export const CREATE_USER_URL = `${USER_BASE_API_URL}register`;
-export const LOGIN_USER_URL = `${USER_BASE_API_URL}login`;
+
+export const CREATE_USER_URL = `${USER_BASE_API_URL}/auth/register`;
+export const LOGIN_USER_URL = `${USER_BASE_API_URL}/auth/login`;
 
 
 
